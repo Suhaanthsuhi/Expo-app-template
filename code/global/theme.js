@@ -6,3 +6,5 @@ const theme = {
     neutralGray: "#525252",
   },
 };
+
+export default theme;

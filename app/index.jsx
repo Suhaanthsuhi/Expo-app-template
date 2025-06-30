@@ -1,3 +1,5 @@
+import PrimaryButton from "@/code/components/buttons/PrimaryButton";
+import CustomLoading from "@/code/components/CustomLoading";
 import ScreenWrapper from "@/code/components/ScreenWrapper";
 import { getFontFamily } from "@/code/global/fonts";
 import responsive from "@/code/helpers/responsive";
@@ -9,6 +11,13 @@ export default function App() {
     <ScreenWrapper>
       <View style={styles.container}>
         <Text style={styles.text}>Hello, Expo Router!</Text>
+        <PrimaryButton
+          title="Continue"
+          arrowRight={true}
+          arrowLeft={true}
+          onPress={() => alert("Button Pressed!")}
+        />
+        <CustomLoading style={{ marginTop: 10 }} />
       </View>
     </ScreenWrapper>
   );
@@ -17,6 +26,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#fff",
@@ -24,7 +34,7 @@ const styles = StyleSheet.create({
     borderColor: "red",
   },
   text: {
-    paddingTop: responsive.padding(0),
+    paddingVertical: responsive.padding(8),
     color: "#333",
     fontFamily: getFontFamily("inter", 400),
   },
